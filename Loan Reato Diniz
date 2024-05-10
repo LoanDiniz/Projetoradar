@@ -1,0 +1,44 @@
+def radar():
+    print("Olá! Por favor, digite o tipo de veículo (carro, moto ou caminhâo):")
+    tipo_veiculo = input().lower()
+    
+    velocidade_maxima = 0
+    if tipo_veiculo == "carro":
+        velocidade_maxima = 110
+    elif tipo_veiculo == "moto":
+        velocidade_maxima = 100
+    elif tipo_veiculo == "caminhão":
+        velocidade_maxima = 90
+    else:
+        print("Tipo de veículo inválido. ")
+        return
+    
+    print("Digite a velocidade do veículo em km/h:")
+    velocidade_atual = int(input())
+    
+    if velocidade_atual > velocidade_maxima:
+        km_excedido = velocidade_atual - velocidade_maxima
+        multa = km_excedido * 5
+        print(f"Você excedeu a velocidade em {km_excedido} km/h.")
+        print(f"Você receberá uma multa de R${multa} e 7 pontos na carteira.")
+        
+        print("Digite o seu CPF:")
+        cpf = input()
+        
+        print("Digite a placa do veículo:")
+        placa = input()
+        
+        print("Você está dirigindo sob efeito de substância alcoólica ou drogas? (sim/não):")
+        resposta = input().lower()
+        
+        if resposta == "sim":
+            print("Você deverá se dirigir à delegacia para responder ao processo criminal de transito.")
+            print("Você foi punido por dirigir sob influência de substâncias ilícitas.")
+        else:
+            print("Por favor, dirija respeitando as leis de trânsito.")
+            
+    else:
+        print("Você está dentro do limite de velocidade. Dirija com segurança!")
+        
+
+radar()
